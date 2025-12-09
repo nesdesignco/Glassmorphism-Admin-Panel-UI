@@ -116,7 +116,7 @@ export function Header({ title, tabs }: HeaderProps) {
                   <Sparkles className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 glass border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
+              <DropdownMenuContent className="w-56 glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
                 <DropdownMenuLabel className="text-[var(--text-tertiary)]">AI Features</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                 <DropdownMenuItem className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white cursor-pointer">
@@ -141,7 +141,7 @@ export function Header({ title, tabs }: HeaderProps) {
                   <Grid3X3 className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 glass border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
+              <DropdownMenuContent className="w-56 glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
                 <DropdownMenuLabel className="text-[var(--text-tertiary)]">Applications</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                 <DropdownMenuItem className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white cursor-pointer">
@@ -170,7 +170,7 @@ export function Header({ title, tabs }: HeaderProps) {
                   <HelpCircle className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 glass border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
+              <DropdownMenuContent className="w-56 glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
                 <DropdownMenuLabel className="text-[var(--text-tertiary)]">Help & Support</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                 <DropdownMenuItem className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white cursor-pointer">
@@ -200,7 +200,7 @@ export function Header({ title, tabs }: HeaderProps) {
                   <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-theme-gradient rounded-full border-2" style={{ borderColor: 'var(--theme-bg-color)' }} />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[85vw] sm:w-80 glass border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
+              <DropdownMenuContent className="w-[85vw] sm:w-80 glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
                 <DropdownMenuLabel className="text-[var(--text-tertiary)]">Notifications</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                 <DropdownMenuItem className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white cursor-pointer flex-col items-start">
@@ -233,7 +233,7 @@ export function Header({ title, tabs }: HeaderProps) {
                   <AvatarFallback>U</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 glass border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
+              <DropdownMenuContent className="w-56 glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]" align="end" sideOffset={12}>
                 <DropdownMenuLabel className="text-[var(--text-tertiary)]">
                   <div className="flex flex-col space-y-1">
                     <p className="text-sm font-medium text-white">John Doe</p>
