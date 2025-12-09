@@ -259,7 +259,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeColor, setThemeColorState] = useState<ThemeColor>("slate")
+  const [themeColor, setThemeColorState] = useState<ThemeColor>("orange")
   const [themeFont, setThemeFontState] = useState<ThemeFont>("inter")
   const [backgroundColor, setBackgroundColorState] = useState<string>("#0a0a0a")
   const [glassSettings, setGlassSettingsState] = useState<GlassSettings>(DEFAULT_GLASS_SETTINGS)

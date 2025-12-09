@@ -18,7 +18,7 @@ export function ThemeScript() {
 
         // Apply theme color
         var savedColor = localStorage.getItem("theme-color");
-        var c = colors[savedColor] || colors.slate;
+        var c = colors[savedColor] || colors.orange;
         d.style.setProperty("--theme-primary", c.p);
         d.style.setProperty("--theme-primary-rgb", c.rgb);
         d.style.setProperty("--theme-gradient-from", c.from);
