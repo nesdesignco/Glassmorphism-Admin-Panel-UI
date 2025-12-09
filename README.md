@@ -1,6 +1,8 @@
 # Glassmorphism Admin Panel UI
 
-Modern, full-featured admin dashboard with stunning glassmorphism design. Built with Next.js 15 and React 19. Features comprehensive management interface for courses, bootcamps, e-books, enrollments, and more.
+Modern, full-featured admin dashboard with stunning glassmorphism design. Built with Next.js 16 and React 19. Features comprehensive management interface for courses, bootcamps, e-books, enrollments, and more.
+
+**[Live Demo](https://glassmorphism-admin-panel-ui.vercel.app)**
 
 ## Screenshots
 
