@@ -1,0 +1,541 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 20 15% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 20 15% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: var(--theme-primary, 215 25% 70%);
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 10% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: var(--theme-primary, 215 25% 70%);
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 10% 15%;
+    --input: 20 10% 12%;
+    --ring: var(--theme-primary, 215 25% 70%);
+    --radius: 1rem;
+    --chart-1: var(--theme-primary, 215 25% 70%);
+    --chart-2: 142 76% 36%;
+    --chart-3: 215 25% 80%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 83 78% 55%;
+
+    /* ==========================================
+       THEME COLORS - Dynamically controlled
+       ========================================== */
+    --theme-primary: 215 25% 63%;
+    --theme-primary-rgb: 148, 162, 180;
+    --theme-gradient-from: #94a2b4;
+    --theme-gradient-to: #7a8a9e;
+
+    /* Font */
+    --font-family: 'Inter', sans-serif;
+
+    /* Background */
+    --theme-bg-color: #0a0a0a;
+
+    /* ==========================================
+       GLASS VARIABLES - Controlled from Settings
+       ========================================== */
+    --glass-opacity: 0.06;
+    --glass-blur: 16px;
+    --glass-border-opacity: 0.10;
+    --glass-saturation: 150%;
+
+    /* Hover artış değerleri */
+    --glass-hover-opacity-add: 0.02;
+    --glass-hover-border-add: 0.05;
+
+    /* ==========================================
+       UI OPACITY LEVELS - For consistent styling
+       ========================================== */
+    --ui-opacity-5: 0.05;
+    --ui-opacity-10: 0.10;
+    --ui-opacity-15: 0.15;
+    --ui-opacity-20: 0.20;
+    --ui-opacity-40: 0.40;
+    --ui-opacity-60: 0.60;
+    --ui-opacity-80: 0.80;
+
+    /* ==========================================
+       TEXT COLORS - Dynamic text styling
+       ========================================== */
+    --text-primary: rgba(255, 255, 255, 1);
+    --text-secondary: rgba(255, 255, 255, 0.80);
+    --text-tertiary: rgba(255, 255, 255, 0.60);
+    --text-muted: rgba(255, 255, 255, 0.40);
+
+    /* ==========================================
+       BACKGROUND GRADIENT OPACITY
+       ========================================== */
+    --bg-gradient-opacity-1: 0.12;
+    --bg-gradient-opacity-2: 0.10;
+    --bg-gradient-opacity-3: 0.04;
+
+    /* ==========================================
+       SCROLLBAR
+       ========================================== */
+    --scrollbar-track: 0.05;
+    --scrollbar-thumb: 0.15;
+    --scrollbar-thumb-hover: 0.25;
+
+    /* ==========================================
+       CHART COLORS
+       ========================================== */
+    --chart-grid-opacity: 0.05;
+    --chart-axis-opacity: 0.10;
+    --chart-text-opacity: 0.50;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: var(--font-family);
+    background: var(--theme-bg-color);
+    background-image:
+      radial-gradient(
+        ellipse 80% 80% at 20% 80%,
+        rgba(var(--theme-primary-rgb), var(--bg-gradient-opacity-1)) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 60% at 80% 20%,
+        rgba(var(--theme-primary-rgb), var(--bg-gradient-opacity-2)) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 50% 50% at 50% 50%,
+        rgba(var(--theme-primary-rgb), var(--bg-gradient-opacity-3)) 0%,
+        transparent 60%
+      );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* ========================================
+   CARD STİLLERİ - Glassmorphism
+   ======================================== */
+
+.glass {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add)));
+}
+
+/* Stats Card - For SVG shaped cards with backdrop blur */
+.glass-card-stats {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-stats:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add)));
+}
+
+/* Liquid Glass Card - Glassmorphism */
+.glass-card-liquid {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-liquid:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add)));
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add) + var(--glass-hover-border-add)));
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-primary);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add)));
+  border-color: rgba(var(--theme-primary-rgb), 0.5);
+  outline: none;
+}
+
+/* Sidebar Glassmorphism */
+.glass-sidebar {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border-right: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme dropdown variant */
+.glass-dropdown-theme {
+  background: linear-gradient(135deg, var(--theme-gradient-from) 0%, var(--theme-gradient-to) 100%);
+  border: 1px solid rgba(255, 255, 255, var(--ui-opacity-20));
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ========================================
+   BUTON STİLLERİ
+   ======================================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--theme-gradient-from) 0%, var(--theme-gradient-to) 100%);
+  color: var(--text-primary);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-icon-circle:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add) + var(--glass-hover-border-add)));
+}
+
+.btn-icon-square {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-icon-square:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add) + var(--glass-hover-border-add)));
+}
+
+/* ========================================
+   ANİMASYONLAR
+   ======================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger animations */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, var(--scrollbar-track));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, var(--scrollbar-thumb));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, var(--scrollbar-thumb-hover));
+}
+
+/* ========================================
+   SHADCN OVERRIDES
+   ======================================== */
+
+/* Card override for glass effect */
+[data-slot="card"] {
+  background: rgba(255, 255, 255, var(--glass-opacity)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity)) !important;
+  border-radius: 1.25rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button variants */
+[data-slot="button"].glass {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+}
+
+/* Select/Dropdown override */
+[data-slot="select-trigger"],
+[data-slot="dropdown-menu-content"] {
+  background: rgba(255, 255, 255, var(--glass-opacity)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity)) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Avatar border */
+[data-slot="avatar"] {
+  border: 2px solid rgba(255, 255, 255, var(--glass-border-opacity));
+}
+
+/* Badge - theme variant */
+.badge-theme {
+  background: rgba(var(--theme-primary-rgb), var(--ui-opacity-15));
+  color: var(--theme-gradient-from);
+  border: none;
+}
+
+/* Tabs override */
+[data-slot="tabs-trigger"][data-state="active"] {
+  background: linear-gradient(135deg, var(--theme-gradient-from) 0%, var(--theme-gradient-to) 100%) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--theme-gradient-from) 0%, var(--theme-gradient-to) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-theme-gradient {
+  background: linear-gradient(135deg, var(--theme-gradient-from) 0%, var(--theme-gradient-to) 100%);
+}
+
+.border-theme {
+  border-color: var(--theme-gradient-from);
+}
+
+.text-theme {
+  color: var(--theme-gradient-from);
+}
+
+.bg-theme-muted {
+  background: rgba(255, 255, 255, var(--ui-opacity-5));
+}
+
+.bg-theme-soft {
+  background: rgba(255, 255, 255, var(--ui-opacity-10));
+}
+
+.border-theme-soft {
+  border-color: rgba(255, 255, 255, var(--glass-border-opacity));
+}
+
+.shadow-theme {
+  /* Glow kaldırıldı */
+}
+
+/* Pagination dots */
+.pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background: var(--theme-gradient-from);
+}
+
+.pagination-dot.inactive {
+  background: rgba(255, 255, 255, var(--ui-opacity-20));
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   STAT CARD WITH INVERTED CORNER
+   ======================================== */
+
+.stat-card-wrapper {
+  position: relative;
+}
+
+.stat-card {
+  --r: 20px;
+  --s: 38px;
+
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  border-radius: var(--r);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%) no-repeat;
+  mask:
+    0 0 var(--_m),
+    100% 100% var(--_m),
+    0 100% var(--_m),
+    radial-gradient(var(--s) at calc(100% - 4px) 4px, #0000 98%, #000) 0 0 no-repeat,
+    conic-gradient(at calc(100% - var(--s) - var(--r) + 4px) calc(var(--s) + var(--r) - 4px), #0000 25%, #000 0);
+  -webkit-mask:
+    0 0 var(--_m),
+    100% 100% var(--_m),
+    0 100% var(--_m),
+    radial-gradient(var(--s) at calc(100% - 4px) 4px, #0000 98%, #000) 0 0 no-repeat,
+    conic-gradient(at calc(100% - var(--s) - var(--r) + 4px) calc(var(--s) + var(--r) - 4px), #0000 25%, #000 0);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add)));
+}
+
+.stat-card-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card-btn:hover {
+  background: rgba(255, 255, 255, calc(var(--glass-opacity) + var(--glass-hover-opacity-add) + var(--glass-hover-opacity-add)));
+  border-color: rgba(255, 255, 255, calc(var(--glass-border-opacity) + var(--glass-hover-border-add) + var(--glass-hover-border-add)));
+}
+
+/* Glass Table */
+.glass-table {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border-opacity));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
