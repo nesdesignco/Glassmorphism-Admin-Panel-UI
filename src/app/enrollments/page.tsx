@@ -231,7 +231,7 @@ export default function EnrollmentsPage() {
                     <span className="hidden sm:inline">Filter</span>
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <DropdownMenuContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <DropdownMenuLabel className="text-[var(--text-tertiary)]">Filter by Status</DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                   <DropdownMenuItem

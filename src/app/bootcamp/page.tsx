@@ -293,7 +293,7 @@ export default function BootcampPage() {
                     <span className="hidden sm:inline">Filter</span>
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <DropdownMenuContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <DropdownMenuLabel className="text-[var(--text-tertiary)]">Filter by Status</DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                   <DropdownMenuItem className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white cursor-pointer">
@@ -370,7 +370,7 @@ export default function BootcampPage() {
                 <SelectTrigger className="w-full glass-input border-[rgba(255,255,255,var(--glass-border-opacity))] text-white">
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
-                <SelectContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <SelectContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <SelectItem value="upcoming" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Upcoming</SelectItem>
                   <SelectItem value="active" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Active</SelectItem>
                 </SelectContent>

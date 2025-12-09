@@ -283,7 +283,7 @@ export default function UsersPage() {
                     <span className="hidden sm:inline">Filter</span>
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <DropdownMenuContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <DropdownMenuLabel className="text-[var(--text-tertiary)]">Filter by Role</DropdownMenuLabel>
                   <DropdownMenuSeparator className="bg-[rgba(255,255,255,var(--ui-opacity-10))]" />
                   <DropdownMenuItem
@@ -356,7 +356,7 @@ export default function UsersPage() {
                 <SelectTrigger className="w-full glass-input border-[rgba(255,255,255,var(--glass-border-opacity))] text-white">
                   <SelectValue placeholder="Select role" />
                 </SelectTrigger>
-                <SelectContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <SelectContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <SelectItem value="Student" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Student</SelectItem>
                   <SelectItem value="Instructor" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Instructor</SelectItem>
                   <SelectItem value="Admin" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Admin</SelectItem>
@@ -369,7 +369,7 @@ export default function UsersPage() {
                 <SelectTrigger className="w-full glass-input border-[rgba(255,255,255,var(--glass-border-opacity))] text-white">
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
-                <SelectContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <SelectContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <SelectItem value="active" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Active</SelectItem>
                   <SelectItem value="inactive" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white">Inactive</SelectItem>
                 </SelectContent>

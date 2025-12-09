@@ -127,7 +127,7 @@ export default function Dashboard() {
                     <SelectTrigger className="w-[95px] sm:w-[120px] h-7 sm:h-8 glass-input border-white/[0.08] text-[var(--text-tertiary)] text-[10px] sm:text-sm">
                       <SelectValue placeholder="Period" />
                     </SelectTrigger>
-                    <SelectContent className="glass border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
+                    <SelectContent className="glass-dropdown border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
                       <SelectItem value="year">Year</SelectItem>
                       <SelectItem value="month">Month</SelectItem>
                       <SelectItem value="week">Week</SelectItem>
@@ -153,7 +153,7 @@ export default function Dashboard() {
                     <SelectTrigger className="w-[95px] sm:w-[120px] h-7 sm:h-8 glass-input border-white/[0.08] text-[var(--text-tertiary)] text-[10px] sm:text-sm">
                       <SelectValue placeholder="Period" />
                     </SelectTrigger>
-                    <SelectContent className="glass border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
+                    <SelectContent className="glass-dropdown border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
                       <SelectItem value="year">Year</SelectItem>
                       <SelectItem value="month">Month</SelectItem>
                       <SelectItem value="week">Week</SelectItem>
@@ -266,7 +266,7 @@ export default function Dashboard() {
                     <SelectTrigger className="w-[95px] sm:w-[120px] h-7 sm:h-8 glass-input border-white/[0.08] text-[var(--text-tertiary)] text-[10px] sm:text-sm">
                       <SelectValue placeholder="Period" />
                     </SelectTrigger>
-                    <SelectContent className="glass border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
+                    <SelectContent className="glass-dropdown border-white/[0.08] min-w-0 w-[95px] sm:w-[120px]">
                       <SelectItem value="7days">7 Days</SelectItem>
                       <SelectItem value="30days">30 Days</SelectItem>
                       <SelectItem value="90days">90 Days</SelectItem>

@@ -103,7 +103,7 @@ export default function ReportsPage() {
                 <SelectTrigger className="w-full sm:w-[120px] h-8 glass-input border-[rgba(255,255,255,var(--glass-border-opacity))] text-white text-xs sm:text-sm">
                   <SelectValue placeholder="Period" />
                 </SelectTrigger>
-                <SelectContent className="glass border-[rgba(255,255,255,var(--glass-border-opacity))]">
+                <SelectContent className="glass-dropdown border-[rgba(255,255,255,var(--glass-border-opacity))]">
                   <SelectItem value="7days" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white text-xs sm:text-sm">7 Days</SelectItem>
                   <SelectItem value="30days" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white text-xs sm:text-sm">30 Days</SelectItem>
                   <SelectItem value="6months" className="text-[var(--text-secondary)] focus:bg-[rgba(255,255,255,var(--ui-opacity-10))] focus:text-white text-xs sm:text-sm">6 Months</SelectItem>
