@@ -14,7 +14,7 @@ Modern, full-featured admin dashboard with stunning glassmorphism design. Built 
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | Next.js 15.1.0, React 19.0.0, TypeScript 5.7.2 |
+| **Framework** | Next.js 16.0.8, React 19.0.0, TypeScript 5.7.2 |
 | **Styling** | Tailwind CSS 3.4.16, Glassmorphism Design |
 | **UI Components** | shadcn/ui, Radix UI 2.x |
 | **Animations** | Framer Motion 11.15.0 |
